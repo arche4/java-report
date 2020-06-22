@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prueba" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f23ca05-d492-4ed7-b82a-a7eef115b2dc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="81"/>
+	<parameter name="cedula" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     persona.`cedula` AS persona_cedula,
+     persona.`Primer_Nombre` AS persona_Primer_Nombre,
+     persona.`segundo_nombre` AS persona_segundo_nombre,
+     persona.`Primer_apellido` AS persona_Primer_apellido,
+     persona.`Segundo_apellido` AS persona_Segundo_apellido
+FROM
+     `persona` persona WHERE persona.cedula = $P!{cedula}]]>
+	</queryString>
+	<field name="persona_cedula" class="java.lang.String"/>
+	<field name="persona_Primer_Nombre" class="java.lang.String"/>
+	<field name="persona_segundo_nombre" class="java.lang.String"/>
+	<field name="persona_Primer_apellido" class="java.lang.String"/>
+	<field name="persona_Segundo_apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<image>
+				<reportElement x="171" y="0" width="380" height="96" uuid="70660156-b0e1-413a-bae4-77bc3e809754"/>
+				<imageExpression><![CDATA["C:\\Users\\Manuela\\Desktop\\reporte.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="475" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="0" width="715" height="63" uuid="682acbee-4ee6-4378-b9b5-4f5e732facd4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="19"/>
+				</textElement>
+				<text><![CDATA[El Semillero de Investigación en Salud y Seguridad en el Trabajo “ISYST”, y la Corporación Colectivo Intersindical de Salud Ocupacional “COISO”]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="65" width="245" height="40" uuid="8e5052f4-863a-4471-923b-475c72ad2e5c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="19"/>
+				</textElement>
+				<text><![CDATA[Hace Constar Que:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="217" y="105" width="234" height="48" uuid="a43d83ce-17b1-46a7-9310-c19f08a12a3d"/>
+				<textElement>
+					<font fontName="Monotype Corsiva" size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_Primer_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="105" width="209" height="48" uuid="8b842b4a-a40d-4f9a-bb6a-3b0af8f29746"/>
+				<textElement>
+					<font fontName="Monotype Corsiva" size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_Primer_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="105" width="134" height="48" uuid="34b58c8d-1828-4fcd-8a97-0af7c53e9474"/>
+				<textElement>
+					<font fontName="Monotype Corsiva" size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_Segundo_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="138" width="197" height="40" uuid="45fa2bb3-813c-420f-9e7b-d80df2950444"/>
+				<textElement>
+					<font fontName="Times New Roman" size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_cedula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="138" width="51" height="40" uuid="d00cf52a-9c3a-43ec-8dbc-6d5749d56e81"/>
+				<textElement>
+					<font fontName="Times New Roman" size="19"/>
+				</textElement>
+				<text><![CDATA[C.C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="191" width="498" height="49" uuid="91481f33-f8f5-47d4-93e0-787183153114"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="19"/>
+				</textElement>
+				<text><![CDATA[           Participó en la Cátedra ISYST
+    “Perspectivas del empleo en el mundo de hoy”
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="257" width="209" height="36" uuid="49bed9e9-0cf5-4391-90ff-513307bead9c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medellín, 26 de Abril de 2018   ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="125" y="329" width="261" height="114" uuid="e727d6ee-b464-4e18-a4d8-518e6d6ed8a0"/>
+				<imageExpression><![CDATA["C:\\Users\\Manuela\\Desktop\\firmajesus.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="626" y="361" width="126" height="114" uuid="58336371-c1b8-443f-a718-46b500b10c29"/>
+				<imageExpression><![CDATA["C:\\Users\\Manuela\\Desktop\\isis.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="361" width="125" height="114" uuid="8ecc5d35-5b8a-4dd8-872c-baafa3c0d436"/>
+				<imageExpression><![CDATA["C:\\Users\\Manuela\\Desktop\\coiso.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="386" y="318" width="232" height="104" uuid="11dfe6aa-a539-4f6d-8a4f-68e9b781e8f2"/>
+				<imageExpression><![CDATA["C:\\Users\\Manuela\\Desktop\\firma.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+</jasperReport>
